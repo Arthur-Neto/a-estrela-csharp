@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using System.Collections.Generic;
 
 namespace AEstrela.Dominio.Testes
@@ -36,9 +37,14 @@ namespace AEstrela.Dominio.Testes
         }
 
         [Test]
-        public void AEstrela_Dominio_ProcurarCaminho_DeveRetornarMatrizMenorCaminho()
+        public void AEstrela_Dominio_ProcurarCaminho_DeveRetornarMatrizMenorCaminho_ComGridDezPorDez()
         {
+            int numeroDeNodosEsperados = 13;
+            aEstrela.Bloqueados = bloqueios;
 
+            List<Nodo> resultado = aEstrela.ProcurarCaminho();
+
+            resultado.Count.Should().Be(numeroDeNodosEsperados);
         }
     }
 }
