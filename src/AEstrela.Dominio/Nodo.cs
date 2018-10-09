@@ -9,7 +9,7 @@
             Peso = 0;
         }
 
-        public Nodo(int x, int y, double peso)
+        public Nodo(int x, int y, decimal peso)
         {
             X = x;
             Y = y;
@@ -18,7 +18,7 @@
 
         public int X { get; set; }
         public int Y { get; set; }
-        public double Peso { get; set; }
+        public decimal Peso { get; set; }
 
         public override bool Equals(object obj)
         {
