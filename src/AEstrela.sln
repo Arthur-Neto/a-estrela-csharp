@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Apresentacao", "1. Apres
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AEstrela.WinApp", "AEstrela.WinApp\AEstrela.WinApp.csproj", "{64AAEF0E-79AF-4628-8333-9949D8E1AD4B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CB5D290F-0343-40D7-B073-A65F263C4277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AEstrela.Dominio.Testes", "AEstrela.Dominio.Testes\AEstrela.Dominio.Testes.csproj", "{B2A5F96C-4ACD-4EE8-8DF5-00F213DFFDE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{64AAEF0E-79AF-4628-8333-9949D8E1AD4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64AAEF0E-79AF-4628-8333-9949D8E1AD4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64AAEF0E-79AF-4628-8333-9949D8E1AD4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2A5F96C-4ACD-4EE8-8DF5-00F213DFFDE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A5F96C-4ACD-4EE8-8DF5-00F213DFFDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A5F96C-4ACD-4EE8-8DF5-00F213DFFDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A5F96C-4ACD-4EE8-8DF5-00F213DFFDE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{43F96C1C-C349-4DEE-8ACE-DCBDFF1FA542} = {764AEBAD-806D-46BB-8605-188ECCB2F204}
 		{64AAEF0E-79AF-4628-8333-9949D8E1AD4B} = {64D07CCB-0AF5-460F-969D-7133787C9BF6}
+		{B2A5F96C-4ACD-4EE8-8DF5-00F213DFFDE7} = {CB5D290F-0343-40D7-B073-A65F263C4277}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CC0F1C7D-4D8C-4F7C-9D9D-575C3B14C8BA}

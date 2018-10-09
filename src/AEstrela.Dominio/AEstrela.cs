@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace AEstrela.Dominio
 {
@@ -15,8 +16,9 @@ namespace AEstrela.Dominio
             CustoDiagonal = custoDiagonal;
             CustoVerticalHorizontal = custoVerticalHorizontal;
             Gerados = new List<Nodo>();
+            Gerados.Add(Atual);
             Expandidos = new List<Nodo>();
-            Grid = new int[LarguraGrid, AlturaGrid];
+            Grid = new Nodo[LarguraGrid, AlturaGrid];
         }
 
         public AEstrela(int alturaGrid, int larguraGrid, Nodo inicial, Nodo destino, double custoDiagonal, double custoVerticalHorizontal)
@@ -29,16 +31,17 @@ namespace AEstrela.Dominio
             CustoDiagonal = custoDiagonal;
             CustoVerticalHorizontal = custoVerticalHorizontal;
             Gerados = new List<Nodo>();
+            Gerados.Add(Atual);
             Expandidos = new List<Nodo>();
             Bloqueados = new List<Nodo>();
-            Grid = new int[LarguraGrid, AlturaGrid];
+            Grid = new Nodo[LarguraGrid, AlturaGrid];
         }
 
         public double CustoDiagonal { get; set; }
         public double CustoVerticalHorizontal { get; set; }
         public int AlturaGrid { get; set; }
         public int LarguraGrid { get; set; }
-        public int[,] Grid { get; set; }
+        public Nodo[,] Grid { get; set; }
         public IList<Nodo> Gerados { get; set; }
         public IList<Nodo> Expandidos { get; set; }
         public IList<Nodo> Bloqueados { get; set; }
@@ -46,33 +49,59 @@ namespace AEstrela.Dominio
         public Nodo Destino { get; set; }
         public Nodo Atual { get; set; }
 
-        public int[,] ProcurarCaminho()
+        public List<Nodo> ProcurarCaminho()
         {
-            return Grid;
-        }
+            List<Nodo> caminho = new List<Nodo>();
+            caminho.Add(Atual);
 
+            while(Gerados.Count > 0)
+            {
+
+            }
+
+            return caminho;
+        }
 
         private void GerarNosFilhos()
         {
 
+            Nodo gerado = new Nodo(0, 0);
+            if (!Expandidos.Contains(gerado))
+                Gerados.Add(gerado);
         }
 
         private bool VerificarEstadoFinal()
         {
-            if(Gerados.Contains(Destino))
+            if(Atual.Equals(Destino))
                 return true;
             else
                 return false;
         }
 
-        private void VerificarCusto()
+        private double VerificarCusto()
         {
-
+            return Math.Abs(Destino.X - Atual.X) + Math.Abs(Destino.Y - Atual.Y);
         }
 
         private void MoverParaMenorCusto()
         {
 
+        }
+
+        private List<Nodo> PegarAdjacentes()
+        {
+            List<Nodo> adjacentes = new List<Nodo>();
+
+            if (Atual.X - 1 >= 0)
+                adjacentes.Add(Grid[Atual.X - 1, Atual.Y]);
+            if (Atual.X < Grid.GetUpperBound(0))
+                adjacentes.Add(Grid[Atual.X + 1, Atual.Y]);
+            if (Atual.Y - 1 >= 0)
+                adjacentes.Add(Grid[Atual.X, Atual.Y - 1]);
+            if (Atual.Y < Grid.GetUpperBound(1))
+                adjacentes.Add(Grid[Atual.X, Atual.Y + 1]);
+
+            return adjacentes;
         }
 
     }
